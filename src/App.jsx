@@ -1,8 +1,9 @@
-import { useState } from 'react'
 import './App.css'
+import config from './config/config'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  console.log(config.appWriteProjectId);
 
   return (
     <>
