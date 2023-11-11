@@ -1,8 +1,8 @@
 import React from 'react'
 import signOutBtn from "./signOutBtn";
 import { useSelector } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
-
+import { useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 
 function Navbar() {
 
@@ -46,8 +46,6 @@ function Navbar() {
     ]
     
 
-
-
     return (
         <header className="relative w-full border-b bg-white pb-4">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -59,18 +57,17 @@ function Navbar() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     <ul>
-                    {navItems.map((item) => 
+                        {navItems.map((item) =>
 
-                       item.active ?(
-                        <li key={item.name}>
-                        <button
-                        onClick={navigate(item.href)}
-                        
-                        > {item.name} </button>
-                       </li> 
-                       ):null                     
-                    )}
-                    {authStatus && (<li><signOutBtn/></li>)}
+                            item.active ? (
+                                <li key={item.name}>
+                                    <button to={item.href}
+                                        onClick={navigate(item.href)}
+                                    > {item.name} </button>
+                                </li>
+                            ) : null
+                        )}
+                        {authStatus && (<li><signOutBtn /></li>)}
                     </ul>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
