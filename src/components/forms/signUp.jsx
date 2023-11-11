@@ -129,21 +129,24 @@ function SignUp() {
                                 Sign In
                             </Link>
                         </p>
-                        <form onSubmit={handleSubmit(create)}>
+                        <form onSubmit={handleSubmit(create)} className="mt-8">
                             <div className="space-y-5">
-                                <div>
+                                <div className='mt-2'>
                                     
                                     <TextBox
                                     label = "Full Name"
                                     placeholder ="Enter your name"
+                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                     {...register ("name", {
                                         required: true,
                                     })}
                                     />
-
+                                </div>
+                                <div className='mt-2'>
                                     <TextBox 
                                     label="Email"
                                     placeholder="Enter your email address"
+                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                     {...register ("email",{
                                         required:true,
                                         validate:{
@@ -152,16 +155,18 @@ function SignUp() {
                                         }
                                     })}
                                     />
-
+                                </div>
+                                <div className='mt-2'>
                                     <TextBox 
                                     label="Password"
                                     type="password"
                                     placeholder="Enter your password"
+                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                     {...register("password",{
                                         required:true,
                                     })}
                                     />
-
+                                </div>
                                     {/* add your textbox control here */}
 
                                     {/* <label htmlFor="name" className="text-base font-medium text-gray-900">
@@ -208,15 +213,16 @@ function SignUp() {
                                     </div>
                                 </div>
                                 <div> */}
+                                <div className='mt-2'>
                                     <Button
                                         type="submit"
                                         className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                     >
                                         Create Account
                                     </Button>
-                                </div>
+                                </div>    
                             </div>
-                        </form>
+                    </form>
                         <div className="mt-3 space-y-3">
                             <button
                                 type="button"

@@ -9,7 +9,7 @@ const TextBox = React.forwardRef( function TextBox({
 }, ref){
     const id = useId();
     return (
-        <div className="w-full md:w-1/3">
+        <div > 
             {
                 label && <label
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
