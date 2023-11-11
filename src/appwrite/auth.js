@@ -13,6 +13,20 @@ constructor (){
     this.account=new Account(this.client);
 }
 
+async createAccount ({email, password, name}){
+    try {
+        const userAccount = await this.client.createAccount(ID.unique, email, password, name);
+        if (userAccount) {
+            return this.signIn({email, password});
+        } else {
+            return userAccount;
+        }
+    } catch (error) {
+        throw error;
+        console.log("Appwrite serive :: createAccount :: error", error);
+    }
+}
+
 async signUp({email,password,name}){
     try {
         const userAccount = await this.account.create(ID.unique(),email,password,name);
