@@ -8,12 +8,12 @@
 	 
 #Pakages
 	1- npm i @reduxjs/toolkit       (for state management)	
-	2- npm i react-redux		(for wrapup redux)
-	3- npm i react-router		
-	4- npm i appwrite			(for connecting backend database service)
+	2- npm i react-redux		    (for wrapup redux)
+	3- npm i react-router-dom		(for navigation)		
+	4- npm i appwrite				(for connecting backend database service)
 	5- npm i @tinymce/tinymce-react	(for text editor)
 	6- npm i html-react-parser		(for saving texteditor content to database)
-	7- npm i react-hook-form 	(for using form )
+	7- npm i react-hook-form 		(for using form )
 	8- npm install -D tailwindcss postcss autoprefixer (tailwind css)
 	   npx tailwindcss init -p
 
