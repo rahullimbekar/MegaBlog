@@ -107,6 +107,7 @@ export default function PostForm({post}) {
                       <TextBox 
                       label="Slug"
                       {...register("slug", {required:true})}
+                      disabled
                       />
                     </div>
                   </div>
