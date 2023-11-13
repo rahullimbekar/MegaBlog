@@ -4,7 +4,7 @@ import './App.css';
 import authService from "../src/appwrite/auth";
 import {signIn, signOut} from "./store/authSlice";
 import { Outlet } from 'react-router';
-import {Navbar, Loader, TextBox, SignUp, SignIn} from './components/index';
+import {Navbar, Loader, TextBox, SignUp, SignIn, PostForm} from './components/index';
 import config from './config/config';
 
 
@@ -29,7 +29,7 @@ function App() {
 
   return !loading? (
     <div className='min-h-screen flex flex-wrap content-between'>
-      <SignUp/>
+      <PostForm/>
       <Outlet/>
     </div>
   ) : <Loader/>

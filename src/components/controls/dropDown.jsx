@@ -20,11 +20,11 @@ function DropDown({
             {...props}
             id={id}
             ref={ref}
-            className={` inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ${className}`}
+            className={` flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 ${className}`}
             >
             {
                 options?.map((option) => (
-                    <option key={options} value={option} >
+                    <option key={option} value={option} >
                         {option}
                     </option>
                 ))

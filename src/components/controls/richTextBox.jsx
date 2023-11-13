@@ -9,7 +9,7 @@ export default function RichTextBox({name, control, label, defaultValue=""}) {
             {
                 label && <label
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    htmlFor={id}
+                    htmlFor={name}
                 >
                     {label}
                 </label>
@@ -47,7 +47,7 @@ export default function RichTextBox({name, control, label, defaultValue=""}) {
                                 "anchor",
                             ],
                             toolbar:
-                                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                                "undo redo | blocks | image | alignleft aligncenter alignright alignjustify bold italic forecolor | bullist numlist outdent indent |removeformat | help",
                             content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
                         }}
                         onEditorChange={onchange}
