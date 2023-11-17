@@ -1,5 +1,5 @@
 import React from 'react'
-import signOutBtn from "./signOutBtn";
+import SignOutBtn from './signOutBtn';
 import { useSelector } from 'react-redux';
 import { useNavigate} from 'react-router-dom';
 import {Link} from 'react-router-dom'
@@ -18,22 +18,22 @@ function Navbar() {
         {
             name:"All Post",
             href:"/all-post",
-            active:authStatus
+            active:authStatus,
         },
         {
             name:"Add Post",
             href:"/add-post",
-            active:authStatus
+            active:authStatus,
         },
         {
             name : "Sign In", 
-            href:"/sigin", 
-            active:!authStatus
+            href:"/signin", 
+            active:!authStatus,
         },
         {
             name: "Sign Up", 
             href:"/signup",
-            active:!authStatus
+            active:!authStatus,
         },
         {
             name:"About",
@@ -61,19 +61,19 @@ function Navbar() {
 
                             item.active ? (
                                 <li key={item.name}>
-                                    <button to={item.href}
-                                        onClick={navigate(item.href)}
+                                    <button
+                                        onClick={() => navigate(item.href)}
                                     > {item.name} </button>
                                 </li>
                             ) : null
                         )}
-                        {authStatus && (<li><signOutBtn /></li>)}
+                        {authStatus && (<li><SignOutBtn/></li>)}
                     </ul>
-                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                    {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                             Log in <span aria-hidden="true">&rarr;</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </header>

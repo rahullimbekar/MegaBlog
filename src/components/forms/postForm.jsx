@@ -7,14 +7,14 @@ import { useSelector } from 'react-redux';
 import { data } from 'autoprefixer';
 
 
-export default function PostForm({post}) {
+export default function PostForm({ post }) {
 
     const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
         defaultValues:{
             title:post?.title ||"",
-            slug: post?.slug  ||"",
+            slug: post?.$id  ||"",
             content : post?.content ||"",
-            status : post?.status ||"",
+            status : post?.status ||"active",
         },
     });
 
@@ -108,6 +108,9 @@ export default function PostForm({post}) {
                       label="Slug"
                       {...register("slug", {required:true})}
                       disabled
+                      onInput={(e) => {
+                        setValue("slug",slugTransform(e.currentTarget.value),{shouldValidate:true});
+                      }}
                       />
                     </div>
                   </div>

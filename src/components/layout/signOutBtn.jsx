@@ -7,8 +7,8 @@ function SignOutBtn() {
 
     const dispatch = useDispatch();
     const logoutHandler = () => {
-        authService.signOut().then(()=>{dispatch(signOut)})
-    }
+        authService.signOut().then(()=>{dispatch(signOut())});
+    };
 
     return (
         <button
