@@ -28,7 +28,7 @@ function App() {
   
 
   return !loading ? (
-    <div >
+    <div className="mx-auto max-w-7xl px-4" >
       <Container>
         <Outlet />
       </Container>

@@ -48,35 +48,42 @@ function Navbar() {
 
     return (
         <header className="relative w-full border-b bg-white pb-4">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                        <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-                    </a>
-                </div>
-                <div className="hidden lg:flex lg:gap-x-12">
-                    <ul>
-                        {navItems.map((item) =>
+            
+            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div className="relative flex h-16 items-center justify-between">
+                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div className="flex flex-shrink-0 items-center">
+                            <img
+                                className="h-8 w-auto"
+                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Your Company"
+                            />
+                        </div>
+                        <div className="hidden sm:ml-6 sm:block">
+                            <div className="flex space-x-4">
+                                
+                                {navItems.map((item) =>
 
-                            item.active ? (
-                                <li key={item.name}>
-                                    <button
-                                        onClick={() => navigate(item.href)}
-                                    > {item.name} </button>
-                                </li>
-                            ) : null
-                        )}
-                        {authStatus && (<li><SignOutBtn/></li>)}
-                    </ul>
-                    {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Log in <span aria-hidden="true">&rarr;</span>
-                        </a>
-                    </div> */}
+                                    item.active ? (
+                                        <li key={item.name} className='list-none'>
+                                            <button
+                                                onClick={() => navigate(item.href)}
+                                            > {item.name} </button>
+                                        </li>
+                                    ) : null
+                                )}                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+                        {authStatus && (<SignOutBtn/>)}
+                    </div>
                 </div>
-            </nav>
+            </div>
         </header>
+        
     )
 }
 
