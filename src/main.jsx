@@ -64,7 +64,6 @@ const router = createBrowserRouter([
         element:(
           <AuthLayout authentication>
             {""}
-            <Navbar/>
             <UpdatePost/>
           </AuthLayout>
         ),
