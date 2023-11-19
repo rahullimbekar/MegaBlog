@@ -15,7 +15,7 @@ export default function RichTextBox({name, control, label, defaultValue=""}) {
                 </label>
             }
             <Controller
-                name={name || "Content"}
+                name={name || "content"}
                 control={control}
                 render={({ field: { onchange } }) => (
                     <Editor

@@ -12,7 +12,7 @@ export default function Button ({
     return(
         <button
             type={type}
-            className={` ${bgColor} ${textColor} ${className} rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-yellow-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 `}{...props}>
+            className={` ${bgColor} ${textColor} ${className} rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-yellow-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 `} {...props}>
             {children}
         </button>
     );

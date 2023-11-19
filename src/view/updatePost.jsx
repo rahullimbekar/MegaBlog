@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {PostForm} from "../components/index";
+import {Container, PostForm} from "../components/index";
 import appWriteService from "../appwrite/dbs";
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -10,9 +10,9 @@ function UpdatePost() {
     const {slug} = useParams();
     const navigate = useNavigate();
 
-    useEffect(() =>{
+    useEffect(() => {
         if(slug){
-            appWriteService.getPost(slug).then((post) =>{
+            appWriteService.getPost(slug).then((post) => {
                 if(post){
                     setPost(post);
                 }
@@ -23,9 +23,13 @@ function UpdatePost() {
     },[slug, navigate]);
 
 
-    return post ? (
+    return post ? ( 
+        
         <div className="mx-auto max-w-7xl py-12 md:py-24">
-            <PostForm post={post} />
+
+            <Container>
+                <PostForm post={post} />
+            </Container>
         </div>
     ) : null
 }
